@@ -1,25 +1,11 @@
 function convertToRoman(num) {
   let NumberA = Array.from(String(num), Number);
-  console.log(NumberA)
+  console.log(NumberA);
   let unit = "";
-  function romanUnits123() {
-    if (NumberA[0] >= 1 && NumberA[0] <= 3) {
+  function romanUnits123(numberTest) {
+    if (numberTest >= 1 && numberTest <= 3) {
       unit = "I";
-      for (let index = 1; index < NumberA[0]; index++) {
-        unit += "I";
-      }
-      console.log(unit);
-      return unit;
-    } else if (NumberA[0] == 4) {
-      unit = "V";
-      for (let index = 1; index < NumberA[0]; index++) {
-        "I" + unit;
-      }
-      console.log("I" + unit);
-      return unit;
-    } else if (NumberA[0] >= 5 && NumberA[0] <= 8) {
-      unit = "V";
-      for (let index = 1; index < NumberA[0]; index++) {
+      for (let index = 1; index < numberTest; index++) {
         unit += "I";
       }
       console.log(unit);
@@ -27,25 +13,37 @@ function convertToRoman(num) {
     }
   }
 
+  function romanUnits459(numberTest) {
+    if (numberTest == 4) {
+      unit = "IV";
+      console.log(unit);
+    } else if (numberTest == 5) {
+      unit = "V";
+      console.log(unit);
+    } else if (numberTest == 9) {
+      unit = "IX";
+      console.log(unit);
+    }
+  }
+
+  function romanUnits678(numberTest) {
+    let residuoPrueba = numberTest % 5;
+    if (numberTest >= 6 && numberTest <= 8) {
+      unit = "V" + romanUnits123(residuoPrueba);
+      console.log(unit);
+    }
+  }
+
   switch (NumberA.length) {
     case 1:
-      romanUnits123();
-      // romanUnits45678();
+      romanUnits123(NumberA[0]);
+      romanUnits459(NumberA[0]);
+      romanUnits678(NumberA[0]);
       break;
-    // case 2:
-    //   break;
-    // case 3:
-    //   console.log("la cantidad de numero es: " + NumberA.length);
-    //   console.log(NumberA[0], NumberA[1], NumberA[2]);
-    //   break;
-    // case 4:
-    //   console.log("la cantidad de numero es: " + NumberA.length);
-    //   console.log(NumberA[0], NumberA[1], NumberA[2], NumberA[3]);
-    //   break;
     default:
-      console.log('sin numeros')
+      console.log("sin numeros");
       break;
   }
 }
 
-convertToRoman(5);
+convertToRoman(3);
