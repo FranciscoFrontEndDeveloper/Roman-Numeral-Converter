@@ -1,6 +1,5 @@
 function convertToRoman(num) {
   let NumberA = Array.from(String(num), Number);
-  console.log(NumberA);
   let unit = "";
   function romanUnits123(numberTest) {
     if (numberTest >= 1 && numberTest <= 3) {
@@ -10,6 +9,9 @@ function convertToRoman(num) {
       }
       console.log(unit);
       return unit;
+    } else if (numberTest == 0 || undefined) {
+      unit = " ";
+      return unit;
     }
   }
 
@@ -17,12 +19,15 @@ function convertToRoman(num) {
     if (numberTest == 4) {
       unit = "IV";
       console.log(unit);
+      return unit;
     } else if (numberTest == 5) {
       unit = "V";
       console.log(unit);
+      return unit;
     } else if (numberTest == 9) {
       unit = "IX";
       console.log(unit);
+      return unit;
     }
   }
 
@@ -31,6 +36,7 @@ function convertToRoman(num) {
     if (numberTest >= 6 && numberTest <= 8) {
       unit = "V" + romanUnits123(residuoPrueba);
       console.log(unit);
+      return unit;
     }
   }
 
@@ -40,10 +46,12 @@ function convertToRoman(num) {
       romanUnits459(NumberA[0]);
       romanUnits678(NumberA[0]);
       break;
+    case 2:
+      break;
     default:
       console.log("sin numeros");
       break;
   }
 }
 
-convertToRoman(3);
+convertToRoman(16);
