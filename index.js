@@ -40,12 +40,33 @@ function convertToRoman(num) {
     return numberRomanConvert;
   }
 
+  function romanCents(arrayLength) {
+    const romanC = {
+      1: "C",
+      2: "CC",
+      3: "CCC",
+      4: "CD",
+      5: "D",
+      6: "DC",
+      7: "DCC",
+      8: "DCCC",
+      9: "CM",
+    };
+
+    const numberDefault = " ";
+    const numberRomanConvert = romanC[arrayLength] || numberDefault;
+    return numberRomanConvert;
+  }
+
   switch (NumberA.length) {
     case 1:
       console.log(romanUnids(Number1));
       break;
     case 2:
       console.log(romanDecends(Number1) + romanUnids(Number2));
+      break;
+    case 3:
+      console.log(romanCents(Number1)+romanDecends(Number2)+romanUnids(Number3))
       break;
 
     default:
