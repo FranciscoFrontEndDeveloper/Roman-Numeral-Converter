@@ -1,77 +1,38 @@
 function convertToRoman(num) {
   let NumberA = Array.from(String(num), Number);
-  let unit = "";
-  function romanUnits123(numberTest) {
-    let residuoPrueba = numberTest % 5;
-    if (numberTest >= 1 && numberTest <= 3) {
-      unit = "I";
-      for (let index = 1; index < numberTest; index++) {
-        unit += "I";
-      }
-      console.log(unit);
-      return unit;
-    } else if (numberTest == 0 || undefined) {
-      unit = " ";
-      return unit;
-    } else if (numberTest == 4) {
-      unit = "IV";
-      console.log(unit);
-      return unit;
-    } else if (numberTest == 5) {
-      unit = "V";
-      console.log(unit);
-      return unit;
-    } else if (numberTest == 9) {
-      unit = "IX";
-      console.log(unit);
-      return unit;
-    } else if (numberTest >= 6 && numberTest <= 8) {
-      unit = "V" + romanUnits123(residuoPrueba);
-      console.log(unit);
-      return unit;
-    }
-  }
+  let Number1 = NumberA[0];
+  let Number2 = NumberA[1];
+  let Number3 = NumberA[2];
+  let Number4 = NumberA[3];
+  function romanUnids(arrayLength) {
+    const romanU = {
+      1: "I",
+      2: "II",
+      3: "III",
+      4: "IV",
+      5: "V",
+      6: "VI",
+      7: "VII",
+      8: "VIII",
+      9: "IX",
+    };
 
-  function romanTens123(numberTest) {
-    if (numberTest >= 1 && numberTest <= 3) {
-      unit = "X";
-      for (let index = 1; index < numberTest; index++) {
-        unit += "X";
-      }
-      console.log(unit + romanUnits123(NumberA[1]));
-      return unit;
-    } else if (numberTest == 4) {
-      unit += "XL";
-      console.log(unit + romanUnits123(NumberA[1]));
-    } else if (numberTest == 5) {
-      unit += "L";
-      console.log(unit + romanUnits123(NumberA[1]));
-    } else if (numberTest >= 6 && numberTest <= 8) {
-      unit = "L";
-      for (let index = 5; index < numberTest; index++) {
-        unit += "X";
-      }
-      console.log(unit + romanUnits123(NumberA[1]));
-      return unit;
-    } else if (numberTest == 9) {
-      unit += "XC";
-      console.log(unit + romanUnits123(NumberA[1]));
-    }
-    console.log(unit);
-    return unit;
+    const numberDefault = " ";
+    const numberRomanConvert = romanU[arrayLength] || numberDefault;
+    return numberRomanConvert;
   }
 
   switch (NumberA.length) {
     case 1:
-      romanUnits123(NumberA[0]);
+      console.log(romanUnids(Number1));
       break;
-    case 2:
-      romanTens123(NumberA[0]);
-      break;
+
     default:
-      console.log("sin numeros");
+      console.log("sin numero");
       break;
   }
+
+  romanUnids();
 }
 
-convertToRoman(90);
+convertToRoman(3);
