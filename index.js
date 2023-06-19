@@ -17,7 +17,7 @@ function convertToRoman(num) {
       9: "IX",
     };
 
-    const numberDefault = " ";
+    const numberDefault = "";
     const numberRomanConvert = romanU[arrayLength] || numberDefault;
     return numberRomanConvert;
   }
@@ -35,7 +35,7 @@ function convertToRoman(num) {
       9: "XC",
     };
 
-    const numberDefault = " ";
+    const numberDefault = "";
     const numberRomanConvert = romanD[arrayLength] || numberDefault;
     return numberRomanConvert;
   }
@@ -53,7 +53,7 @@ function convertToRoman(num) {
       9: "CM",
     };
 
-    const numberDefault = " ";
+    const numberDefault = "";
     const numberRomanConvert = romanC[arrayLength] || numberDefault;
     return numberRomanConvert;
   }
@@ -65,23 +65,23 @@ function convertToRoman(num) {
       3: "MMM",
     };
 
-    const numberDefault = " ";
+    const numberDefault = "";
     const numberRomanConvert = romanH[arrayLength] || numberDefault;
     return numberRomanConvert;
   }
 
   switch (NumberA.length) {
     case 1:
-      console.log(romanUnids(Number1));
+      romanUnids(Number1);
       break;
     case 2:
-      console.log(romanDecends(Number1) + romanUnids(Number2));
+      romanDecends(Number1) + romanUnids(Number2);
       break;
     case 3:
-      console.log(romanCents(Number1)+romanDecends(Number2)+romanUnids(Number3))
+      romanCents(Number1) + romanDecends(Number2) + romanUnids(Number3);
       break;
     case 4:
-        console.log(romanHundred(Number1)+romanCents(Number2)+romanDecends(Number3)+romanUnids(Number4))
+      romanHundred(Number1)+romanCents(Number2)+romanDecends(Number3)+romanUnids(Number4)
         break;
 
     default:
@@ -89,7 +89,6 @@ function convertToRoman(num) {
       break;
   }
 
-  romanUnids();
 }
 
 convertToRoman(3);
