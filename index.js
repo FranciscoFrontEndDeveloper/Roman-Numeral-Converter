@@ -73,22 +73,29 @@ function convertToRoman(num) {
   switch (NumberA.length) {
     case 1:
       romanUnids(Number1);
+      num = romanUnids(Number1);
+      return num;
       break;
     case 2:
-      romanDecends(Number1) + romanUnids(Number2);
+      num = romanDecends(Number1) + romanUnids(Number2);
+      return num;
       break;
     case 3:
-      romanCents(Number1) + romanDecends(Number2) + romanUnids(Number3);
+      num = romanCents(Number1) + romanDecends(Number2) + romanUnids(Number3);
+      return num;
       break;
     case 4:
-      romanHundred(Number1)+romanCents(Number2)+romanDecends(Number3)+romanUnids(Number4)
-        break;
+      num = romanHundred(Number1) +
+        romanCents(Number2) +
+        romanDecends(Number3) +
+        romanUnids(Number4);
+      return num;
+      break;
 
     default:
       console.log("sin numero");
       break;
   }
-
 }
 
-convertToRoman(3);
+convertToRoman(36);
