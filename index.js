@@ -22,9 +22,30 @@ function convertToRoman(num) {
     return numberRomanConvert;
   }
 
+  function romanDecends(arrayLength) {
+    const romanD = {
+      1: "X",
+      2: "XX",
+      3: "XXX",
+      4: "XL",
+      5: "L",
+      6: "LX",
+      7: "LXX",
+      8: "LXXX",
+      9: "XC",
+    };
+
+    const numberDefault = " ";
+    const numberRomanConvert = romanD[arrayLength] || numberDefault;
+    return numberRomanConvert;
+  }
+
   switch (NumberA.length) {
     case 1:
       console.log(romanUnids(Number1));
+      break;
+    case 2:
+      console.log(romanDecends(Number1) + romanUnids(Number2));
       break;
 
     default:
